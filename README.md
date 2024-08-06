@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# 1 Контекст
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ты находишься в реальном магазине, в котором можно покупать попытки. Процесс попкупки попытки представляет собой нажатие на кнопку "Купить попытку", которую можно увидеть из любого места магазина. Но владелец магазина обнаружил большую неприятность - количество купленных попыток на счетчике отображатся неправильно.
 
-Currently, two official plugins are available:
+Ты - опытный мастер, работающий в этом магазине, поэтому любую свою работу проводишь в отдельной ветке, навзание которой отражает выполняемую работу. После завершения работы ты создаешь Pull Request, чтобы такой же опытный мастер смог проверить твою работу.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 2 Что надо сделать
 
-## Expanding the ESLint configuration
+## 2.1 Фикс бага
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Нужно убедиться в том, что счетчик работает неправильно, и починить его.
 
-- Configure the top-level `parserOptions` property like this:
+## 2.2 Повышение качества обслуживания
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Иногда случается такое, что клиент случайно задевает кнопку "Купить попытку", из-за чего незапланированно тратит свои финансы. Твоя задача состоит в том, чтобы найти решение этой проблемы. Предлагается сделать диалоговое окно, в котором клиенту будет необходимо дополнительно подтвердить покупу, либо же прекратить процесс покупки, если он случайно нажал кнопку "Купить попытку".
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Любое другое решение данной проблемы тоже допускается.
+
+## 2.3 Ошибка типизации
+
+С большой вероятностью в исходном коде должна возникать следующая ошибка в типизации:
+![фоточка](./error.png)
+
+Нужно исправить эту ошибку.
+
+# 3 Вопросы
+
+1. Почему возникала ошибка типизации?
+2. Почему в магазине не работал счетчик?
